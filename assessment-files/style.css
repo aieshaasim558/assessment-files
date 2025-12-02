@@ -21,6 +21,10 @@ body {
   width: 80%;
   min-width: 1024px;
   margin: 0 auto;
+  background-color: #ffffff; 
+  color: #222222;            
+  font-family: Arial, sans-serif;
+
 }
 
 /* || typography */
