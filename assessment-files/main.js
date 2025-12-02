@@ -1,3 +1,11 @@
+/*
+Name: Aiesha Asim
+File: main.js
+Date: December 2, 2025
+This file adds JavaScript behavior such as showing and hiding comments.
+*/
+
+
 // functionality for showing/hiding the comments section
 
 const showHideBtn = document.querySelector('.show-hide');
