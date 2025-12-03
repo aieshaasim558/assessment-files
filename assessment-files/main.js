@@ -6,35 +6,33 @@ This file adds JavaScript behavior such as showing and hiding comments.
 */
 
 
-// functionality for showing/hiding the comments section
-
-const showHideBtn = document.querySelector('.show-hide');
+// Show/hide comments section
+const toggleBtn = document.getElementById('toggle-comments');
 const commentWrapper = document.querySelector('.comment-wrapper');
 
-commentWrapper.style.display = 'none';
+// Start with comments hidden
+commentWrapper.classList.add('hidden');
 
-showHideBtn.onclick = function() {
-  let showHideText = showHideBtn.textContent;
-  if(showHideText === 'Show comments') {
-    showHideBtn.textContent = 'Hide comments';
-    commentWrapper.style.display = 'block';
+toggleBtn.addEventListener('click', () => {
+  commentWrapper.classList.toggle('hidden');
+
+  if (commentWrapper.classList.contains('hidden')) {
+    toggleBtn.textContent = 'Show comments';
   } else {
-    showHideBtn.textContent = 'Show comments';
-    commentWrapper.style.display = 'none';
+    toggleBtn.textContent = 'Hide comments';
   }
-};
+});
 
-// functionality for adding a new comment via the comments form
-
+// Add new comments
 const form = document.querySelector('.comment-form');
 const nameField = document.querySelector('#name');
 const commentField = document.querySelector('#comment');
 const list = document.querySelector('.comment-container');
 
-form.onsubmit = function(e) {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   submitComment();
-};
+});
 
 function submitComment() {
   const listItem = document.createElement('li');
@@ -50,6 +48,7 @@ function submitComment() {
   listItem.appendChild(namePara);
   listItem.appendChild(commentPara);
 
+  // Reset fields
   nameField.value = '';
   commentField.value = '';
 }

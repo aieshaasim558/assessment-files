@@ -62,9 +62,14 @@ p, li, table {
 
 /* || header layout */
 
-nav, article, footer, .secondary {
-  background-color: green;
+article, footer, .secondary {
+  background-color: #ffffff; 
 }
+
+nav {
+  background-color: #ccc5d4;
+}
+
 
 article, footer, .secondary {
   padding: 10px 30px;
@@ -220,6 +225,12 @@ audio {
   flex: 6;
 }
 
+.comment-form textarea {
+  margin-left: 1rem;
+  flex: 6;
+  height: 80px;
+}
+
 .show-hide {
   text-align: center;
   width: 150px;
@@ -259,3 +270,17 @@ audio {
 .comment-container li p:nth-child(2) {
   flex: 5;
 }
+
+/* Screen-reader-only text */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
